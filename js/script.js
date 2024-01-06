@@ -2,18 +2,18 @@ function getUserInput() {
     let rows;
     let columns;
     
-    // Зациклюємо введення, доки не отримаємо правильне число
+    // Зациклюємо введення, доки не отримаємо вірне число
     while (true) {
-      rows = prompt("Введіть кількість рядків:");
-      columns = prompt("Введіть кількість стовпців:");
+      rows = prompt("Введіть кількість перших множників: ");
+      columns = prompt("Введіть кількість других множників:");
   
-      // Перевірка, чи користувач вибрав "Cancel"
+      // Перевірка на скасування.
       if (rows === null || columns === null) {
         alert("Ви скасували введення.");
-        return null; // Зупинка виконання функції при скасуванні введення
+        return null;
       }
   
-      // Перевірка, чи введено тільки числа
+      // Перевірка, чи введено тільки числа спеціальним виразом.
       if (/^\d+$/.test(rows) && /^\d+$/.test(columns)) {
         break; // Виходимо з циклу, якщо введено число
       } else {
@@ -24,7 +24,7 @@ function getUserInput() {
     return { rows: parseInt(rows, 10), columns: parseInt(columns, 10) }; // Повертаємо введені числа
   }
   
-  let userInput = getUserInput();
+  const userInput = getUserInput();
   
   if (userInput !== null) {
     multiplicationTable(userInput.rows, userInput.columns);

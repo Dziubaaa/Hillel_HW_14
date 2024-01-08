@@ -1,6 +1,6 @@
 function getUserInput() {
-    let rows;
-    let columns;
+    const rows;
+    const columns;
     
     // Зациклюємо введення, доки не отримаємо вірне число
     while (true) {
@@ -31,7 +31,7 @@ function getUserInput() {
   }
   
   function multiplicationTable(rows, columns) {
-    let table = document.getElementById("multiplicationTbl");
+    const table = document.getElementById("multiplicationTbl");
   
     for (let i = 1; i <= rows; i++) {
       let row = table.insertRow(i - 1);
